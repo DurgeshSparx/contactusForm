@@ -1,0 +1,378 @@
+<!-- Contact Form -->
+<section class="ourter-wrapper">
+<div class="contact-form-wrapper">
+  <h2 class="form-heading">Send a message</h2>
+  <p class="form-subheading">Please enter your contact information</p>
+  <p class="form-note">We use this information to send you a reply</p>
+
+  <form class="contact-form" id="contactForm" >
+    <div class="form-row main-row-wrapper">
+      <div class="form-row">
+          <div class="form-group select-box floating-label">
+            <!-- Title -->
+            <select id="title" name="title"  class="floating-select required-input" value="" required="">
+              <option value=""></option>
+              <option value="">Select</option>
+              <option value="mr">Mr</option>
+              <option value="ms">Ms</option>
+              <option value="mrs">Mrs</option>
+              <option value="dr">Dr</option>
+            </select>
+             <div class="border-animation"></div>
+            <label for="title">Title *</label>
+          </div>
+          <!-- Name -->
+          <div class="form-group">
+              <input type="text" id="firstName" name="first_name" required placeholder="">
+              <div class="border-animation"></div>
+              <label for="firstName">First Name</label>
+            </div>
+      </div>
+      <!-- LastName -->
+      <div class="form-row">
+        <div class="form-group">
+          <input type="text" id="lastName" name="last_name" required placeholder="">
+          <div class="border-animation"></div>
+          <label for="lastName">Last Name *</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Email -->
+     <div class="form-row">
+      <div class="form-group">
+        <input type="email" id="email" name="email" required placeholder="">
+        <div class="border-animation"></div>
+        <label for="email">Email *</label>
+      </div>
+    </div>
+
+    <div class="form-row">
+    <p class="or-text">and/or</p>
+    </div>
+    <!-- Phone -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="countryCode">Phone Country Code</label>
+        <select id="countryCode" name="country_code">
+          <option value="+91">India (+91)</option>
+          <option value="+1">USA (+1)</option>
+          <option value="+44">UK (+44)</option>
+          <option value="+61">Australia (+61)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="tel" id="phone" name="phone" required placeholder="">
+        <div class="border-animation"></div>
+        <label for="phone">Phone</label>
+      </div>
+    </div>
+
+    <!-- Store -->
+    <div class="form-group form-row">
+      <select id="store" name="store" required>
+         <option value=""></option>
+        <option value="">Select Store</option>
+        <option value="store1">Store 1</option>
+        <option value="store2">Store 2</option>
+      </select>
+      <div class="border-animation"></div>
+      <label for="store">Store</label>
+    </div>
+    <!-- Terms -->
+    <div class="form-row">
+    <label class="checkbox">
+      <input type="checkbox" required>
+      <label class="check-lable" for="checkbox-lable"> <span class="checkbox-text">
+            I agree to Dia's 
+            <a href="#" class="link">terms of use</a> and take note of the 
+            <a href="#" class="link">privacy policy</a></span></label>
+    </label>
+    </div>
+
+    <!-- Button -->
+    <button type="submit" class="submit-btn">Send message</button>
+  </form>
+  <p id="formMessage"></p>
+</div>
+</section>
+
+
+<style>
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.ourter-wrapper{
+  background: #f9f7f4;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.contact-form-wrapper {
+  max-width:640px;
+  margin: 40px auto;
+  padding: 20px;
+  color: #3d2b1f;
+  text-align:center;
+}
+.floating-select:focus {
+    outline: none;
+}
+.form-heading,.form-subheading {
+    color: #452c1e;
+    line-height: 1.2;
+    letter-spacing: 0;
+    text-transform: none;
+    font-weight: 700;
+    font-family: 'Centra No1 TRIAL';
+    margin: 0;
+    font-size:22px;
+}
+
+.form-subheading {
+    font-size: 44px;
+}
+
+.form-note {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #212121;
+  font-family: 'Centra No1 TRIAL Hairline';
+}
+.main-row-wrapper{
+  display: flex;
+  gap: 15px;
+}  
+.contact-form label {
+  display: block;
+  font-size: 16px;
+  margin:0;
+  font-family: 'Centra No1 TRIAL';
+  font-weight: 400;
+}
+
+.contact-form input,
+.contact-form select {
+  position: relative;
+  margin: 0 !important;
+  border: none !important;
+  height: 30px;
+  padding: 9px 0 0 !important;
+  background: transparent;
+  z-index: 2;
+  font-size: 16px;
+  letter-spacing: .4px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #000;
+  width: 100%;
+  outline: none;
+}
+.form-group label {
+    font-family: 'Centra No1 TRIAL';
+    font-weight: 400;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: left;
+    display: inline-block;
+    height: 14px;
+    font-size: 16px;
+    letter-spacing: .4px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 0 auto;
+    cursor: text;
+    z-index: 1;
+    color: #4e4e4e;
+    text-transform: capitalize;
+    transition: .2s ease all;
+    -moz-transition: .2s ease all;
+    -webkit-transition: .2s ease all;
+}
+{% comment %} .form-group input:focus~label, .form-group select:focus~label{
+    top: -13px;
+    font-size: 12px;
+    color: #000;
+} {% endcomment %}
+.form-group input:focus ~ label,
+.form-group input:not(:placeholder-shown) ~ label,
+.form-group input:valid ~ label,
+.form-group select:focus ~ label,
+.form-group select:valid ~ label {
+    top: -13px;
+    font-size: 12px;
+    color: #000;
+}
+.border-animation:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    height: 2px;
+    width: 10px;
+    visibility: hidden;
+    background-color: #000;
+    transition: .2s ease all;
+    z-index: 5;
+}
+.form-group input:focus~.border-animation:after {
+    visibility: visible;
+    width: 100%;
+    left: 0;
+}
+
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  width:100%;
+  flex-direction: column;
+}
+@media screen and (min-width: 600px) {
+  .form-row {
+    flex-direction: row;
+  }
+}
+.form-group {
+  flex: 1;
+  position:relative;
+  border-bottom: 1px solid #7a7a7a !important;
+}
+label[for="countryCode"]{
+    top: -13px;
+    font-size: 12px;
+    color: #000;
+}
+.or-text {
+  text-align: center;
+  font-size: 16px;
+  margin: 10px 0;
+  color: #555;
+  font-family: 'Centra No1 TRIAL';
+  font-weight: 400;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  margin-top: 15px;
+}
+.contact-form .checkbox{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+.checkbox input {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.checkbox a {
+  color: #4e4e4e;
+  text-decoration: underline;
+}
+.checkbox .check-lable:before {
+    content: "";
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 1px solid #222;
+    box-shadow: 0 1px 2px #0000000d, inset 0 -15px 10px -12px #0000000d;
+    padding: 9px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+    border: 1px solid;
+    border-radius: 50%;
+}
+.checkbox input:checked+label:before {
+    border-color: #127749;
+    background-color: #127749;
+}
+
+.checkbox input:checked+label:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    width: 4px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.submit-btn {
+  width: 100%;
+  background: #006400;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 25px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  max-width: max-content;
+  margin: 0 auto;
+   font-family: 'Centra No1 TRIAL';
+    font-weight:600;
+}
+
+.submit-btn:hover {
+  background: #004d00;
+}
+.shopify-block.shopify-app-block{width: 100%;}
+</style>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+console.log('payload data',data);
+  try {
+    const response = await fetch("/apps/formsubmission", {  // Subpath prefix/Subpath of the app proxy 
+
+      method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      document.getElementById("formMessage").innerText = "✅ Message sent successfully!";
+    } else {
+      document.getElementById("formMessage").innerText = "❌ Failed: " + result.error;
+    }
+  } catch (err) {
+    document.getElementById("formMessage").innerText = "⚠️ Something went wrong!";
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Form",
+  "target": "section"
+}
+{% endschema %}
